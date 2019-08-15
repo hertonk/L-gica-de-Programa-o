@@ -1,2 +1,3 @@
-# L-gica-de-Programa-o
+# Lógica-de-Programação
+
 Códigos das aulas de Lógica de Programação GTI
