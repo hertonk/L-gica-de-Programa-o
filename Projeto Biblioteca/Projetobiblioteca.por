@@ -1,5 +1,6 @@
 programa
 {
+	inclua biblioteca Util --> u
 	
 	funcao inicio()
 	{
@@ -29,13 +30,24 @@ programa
 				pare
 
 				caso 2:
+
+					editarLivro(contador, isbn, titulo, autor, editora, ano)
+					
 				pare
 
 				caso 3:
+
+					detalharLivro(contador, isbn, titulo, autor, editora, ano)
+				
 				pare
 
 				caso 4:
 
+				pare
+
+				caso 5:
+					escreva("\nObrigado por utilizar nosso programa!")
+					escreva("\nSAINDO DO PROGRAMA...")
 				pare
 
 				caso contrario:
@@ -54,7 +66,9 @@ programa
 			escreva("ARMAZENAMENTO CHEIO. \n")
 		
 		} senao {
-		
+
+			escreva("\nVOCÊ ESTÁ CADASTRANDO UM NOVO LIVRO\n\n")
+			
 			escreva("Digite o ISBN do livro: ")
 			leia(isbn[contador])
 	
@@ -70,8 +84,71 @@ programa
 			escreva("Digite o ano do livro: ")
 			leia(ano[contador])
 
+			escreva("\nLIVRO CADASTRADO COM SUCESSO!\n\n")
+			
+			contador++
+
 		}
 	
+	}
+
+	funcao editarLivro(inteiro contador, inteiro isbn[], cadeia titulo[], cadeia autor[], cadeia editora[], inteiro ano[]){
+
+		inteiro indice 
+		
+		escreva("\nVOCÊ ESTÁ EDITANDO UM LIVRO\n\n")
+
+		escreva("Digite o índice do livro: ")
+		leia(indice)
+
+		escreva("\nDetalhes do Livro:\n\n")
+		escreva("\nISBN Atual: ", isbn[indice])
+		escreva("\nDigite o novo ISBN: ")
+		leia(isbn[indice])
+		
+		escreva("\nTítulo Atual: ", titulo[indice])
+		escreva("\nDigite o novo Título: ")
+		leia(titulo[indice])
+		
+		escreva("\nAutor Atual: ", autor[indice])
+		escreva("\nNovo Autor: ")
+		leia(autor[indice])
+		
+		escreva("\nEditora Atual: ", editora[indice])
+		escreva("\nNova Editora: ")
+		leia(editora[indice])
+		
+		escreva("\nAno Atual: ", ano[indice])
+		escreva("\nNovo Ano: ")
+		leia(ano[indice])
+
+		escreva("\nLIVRO EDITADO COM SUCESSO!\n\n")
+	
+	}
+
+	funcao detalharLivro(inteiro contador, inteiro isbn[], cadeia titulo[], cadeia autor[], cadeia editora[], inteiro ano[]){
+		
+		inteiro indice 
+		
+		se(contador == 0){
+
+			escreva("\nNÃO EXISTE NENHUM LIVRO CADASTRADO\n\n")
+		
+		} senao {
+		
+			escreva("\nVOCÊ ESTÁ DETALHANDO UM NOVO LIVRO\n\n")
+			
+			escreva("Digite o índice do livro: ")
+			leia(indice)
+	
+			escreva("\nDetalhes do Livro:\n\n")
+			escreva("\nISBN: ", isbn[indice])
+			escreva("\nTítulo: ", titulo[indice])
+			escreva("\nAutor: ", autor[indice])
+			escreva("\nEditora: ", editora[indice])
+			escreva("\nAno: ", ano[indice], "\n\n")
+			
+		}
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -79,7 +156,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 584; 
+ * @POSICAO-CURSOR = 1862; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
